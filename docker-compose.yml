@@ -1,0 +1,15 @@
+version: '3.9'
+services: 
+    my-app:
+        container_name: es-container
+        restart: always
+        build: .
+        volumes:
+            - esvolume:/usr/share/elasticsearch/data
+        ports: 
+            - "9200:9200"
+            - "9300:9300"
+
+volumes:
+    esvolume:
+     driver: local
